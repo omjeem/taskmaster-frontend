@@ -70,6 +70,7 @@ export default function SigInModel() {
 
                                                     }
                                                     else {
+                                                        console.log("Error is ", e)
                                                         toast.error("Oops! Some internal error occurred. Please try again later.");
                                                     }
                                                 } catch (err) {
