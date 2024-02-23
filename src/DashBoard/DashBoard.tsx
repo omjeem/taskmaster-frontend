@@ -2,11 +2,12 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { isPriority, todoListState, userDetail } from "../recoil/atom";
 import { useEffect } from "react";
 import axios from "axios";
-import { API } from "../API";
+
 import { AppBar } from "../Components/AppBar";
 import { PriorityDashboard } from "./PriorityDashboard";
 import { ProgressDashboard } from "./ProgressDashBoard";
 
+const API = import.meta.env.VITE_API_URL;
 export function Dashboard() {
    const [todoList, setTodoList] = useRecoilState(todoListState);
    const [, setUserInfo] = useRecoilState(userDetail)

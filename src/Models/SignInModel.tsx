@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { CustomButton } from "../Components/Introduction";
 import axios from "axios";
-import { API } from "../API";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userDetail } from "../recoil/atom";
@@ -9,6 +8,7 @@ import { Heading, InputBox, SubHeading } from "../Components/SubComponents";
 import { Button } from "../Components/Button";
 import { toast } from "react-toastify";
 
+const API = import.meta.env.VITE_API_URL;
 
 
 export default function SigInModel() {

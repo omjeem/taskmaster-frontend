@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { CustomButton } from "../Components/Introduction";
 import axios from "axios";
-import { API } from "../API";
 import { useRecoilState } from "recoil";
 import { userDetail } from "../recoil/atom";
 import { Heading, InputBox, SubHeading } from "../Components/SubComponents";
 import { UserIcon } from "../SVG/Icon";
 import { toast } from "react-toastify";
 
+const API = import.meta.env.VITE_API_URL;
 export default function UpdateProfile() {
     const [showModal, setShowModal] = useState(false);
     const [password, setPassword] = useState("");

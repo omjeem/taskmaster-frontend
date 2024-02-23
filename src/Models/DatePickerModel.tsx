@@ -5,10 +5,10 @@ import { Button } from "../Components/Button";
 import Datepicker from "react-tailwindcss-datepicker";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { API } from "../API";
 import { useRecoilState } from "recoil";
 import { todoListState } from "../recoil/atom";
 
+const API = import.meta.env.VITE_API_URL;
 
 interface DateType {
     startDate: any,

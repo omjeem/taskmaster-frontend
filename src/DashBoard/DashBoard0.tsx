@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { API } from "../API";
+
 import { useNavigate } from "react-router-dom";
 
+const API = import.meta.env.VITE_API_URL;
 
 export function DashBoard0() {
     const navigate = useNavigate()

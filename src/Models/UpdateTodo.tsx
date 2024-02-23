@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { todoListState } from "../recoil/atom";
 import { Priority, Progress } from "../TodoStatus";
-import { API } from "../API";
 import { CustomButton } from "../Components/Introduction";
 import { toast } from "react-toastify";
 import { Heading,InputBox, RadioVerticalProgressList, SubHeading } from "../Components/SubComponents";
 
+const API = import.meta.env.VITE_API_URL;
 interface TodoInfo {
     id: String,
     title: String,
