@@ -20,7 +20,7 @@ export default function DatePickerModel() {
     const [showModal, setShowModal] = useState(false);
     const [date, setDate] = useState<DateType>(); 
     const [, setTodo] = useRecoilState(todoListState)
-    const currDate = new Date().toLocaleDateString()
+    const currDate = new Date().toISOString().slice(0, 10).split('-').reverse().join('-');
 
     const handleDateChange = (newDate: DateType) => {
         setDate(newDate);
