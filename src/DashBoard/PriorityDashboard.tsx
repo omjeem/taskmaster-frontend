@@ -2,6 +2,8 @@ import { ThreeDots } from "../SVG/Icon";
 import { HighPriority, LowPriority, MediumPriority, UrgentPriority } from "../SVG/Priority";
 import { Progress, Priority } from "../TodoStatus"
 import { Card } from "../Components/Card";
+import '../App.css';
+
 
 interface TodoInfo {
     id: String,
@@ -21,7 +23,7 @@ export function PriorityDashboard({ todoList }: { todoList: TodoInfo[] }) {
     const noPriorityList = todoList.filter(todo => todo.priority == Priority.NoPriority)
 
     return (
-        <>
+        <div>
             {todoList.length != 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 justify-between p-3">
                     <PriorityColumn priority={Priority.Urgent} count={urgentList.length} todo={urgentList} />
@@ -38,7 +40,7 @@ export function PriorityDashboard({ todoList }: { todoList: TodoInfo[] }) {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 
 }

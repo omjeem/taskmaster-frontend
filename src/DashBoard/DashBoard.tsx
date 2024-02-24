@@ -9,32 +9,32 @@ import { ProgressDashboard } from "./ProgressDashBoard";
 
 const API = import.meta.env.VITE_API_URL;
 export function Dashboard() {
-   const [todoList, setTodoList] = useRecoilState(todoListState);
-   const [, setUserInfo] = useRecoilState(userDetail)
-   const isPriorityScreen = useRecoilValue(isPriority);
+    const [todoList, setTodoList] = useRecoilState(todoListState);
+    const [, setUserInfo] = useRecoilState(userDetail)
+    const isPriorityScreen = useRecoilValue(isPriority);
 
-   useEffect(() => {
-       axios.get(API+"api/todo/", {
-           headers: {
-               "Authorization": localStorage.getItem("token"),
-               "Content-Type": "application/json"
-           }
-       }).then((response) => {
-           setTodoList(response.data.todo)
-           setUserInfo(response.data.userInfo)
-       }).catch((error) => {
-       });
-   }, []);
+    useEffect(() => {
+        axios.get(API + "api/todo/", {
+            headers: {
+                "Authorization": localStorage.getItem("token"),
+                "Content-Type": "application/json"
+            }
+        }).then((response) => {
+            setTodoList(response.data.todo)
+            setUserInfo(response.data.userInfo)
+        }).catch(() => {
+        });
+    }, []);
 
 
-   return (
-       <div className="bg-gray-200 h-screen">
-           <AppBar />
-           <div className='bg-gray-200 h-screen'>
-               {
-                   isPriorityScreen ? <PriorityDashboard todoList={todoList} /> : <ProgressDashboard todoList={todoList} />
-               }
-           </div>
-       </div>
-   )
+    return (
+        <div className="bg-gray-200 h-screen">
+            <AppBar />
+            <div className='bg-gray-200 h-screen'>
+                {
+                    isPriorityScreen ? <PriorityDashboard todoList={todoList} /> : <ProgressDashboard todoList={todoList} />
+                }
+            </div>
+        </div>
+    )
 }
