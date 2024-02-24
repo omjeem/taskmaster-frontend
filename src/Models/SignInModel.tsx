@@ -55,7 +55,7 @@ export default function SigInModel() {
                                                         password: password
                                                     }),
                                                     {
-                                                        pending: "Loading... ⏳ This may take a while, approximately 50 seconds.",
+                                                        pending: "Loading... ⏳ Please be patient as we process your request. It may take a few moments.",
                                                         success: 'Logged In Successfully! 🎉'
                                                     }
                                                     , { autoClose: 2000, pauseOnHover: false, });

@@ -62,7 +62,7 @@ export default function SignUpModel({ label }: any) {
                                                         lastName: lastName
                                                     }),
                                                     {
-                                                        pending: "Loading... ⏳ This may take a while, approximately 50 seconds.",
+                                                        pending: "Loading... ⏳ Please be patient as we process your request. It may take a few moments.",
                                                         success: 'Signed Up Successfull! 🎉',
                                                     }
                                                     , { autoClose: 2000, pauseOnHover: false, });
