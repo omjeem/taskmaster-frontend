@@ -70,13 +70,11 @@ export default function SigInModel() {
 
                                                     }
                                                     else {
-                                                        console.log("Error is ", e)
                                                         toast.error("Oops! Some internal error occurred. Please try again later.");
                                                     }
                                                 } catch (err) {
                                                     toast.error("Server is down! Please try again later 🥺");
                                                 }
-                                                console.log("Error is ", e)
                                             }
                                         }}
                                             label={"Sign In"} />

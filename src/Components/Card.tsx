@@ -22,7 +22,6 @@ export function Card(props: TodoInfo) {
     }
 
     return <div onClick={()=>{
-        console.log("Model status is ", showModal)
         handelerClick()
     }}  className="rounded-md bg-white my-2 p-2 text-xs hover:bg-gray-100 cursor-pointer ">
         <div className="mx-1">

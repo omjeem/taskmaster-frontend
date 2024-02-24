@@ -23,7 +23,6 @@ export function Dashboard() {
            setTodoList(response.data.todo)
            setUserInfo(response.data.userInfo)
        }).catch((error) => {
-           console.error("Error is " + error);
        });
    }, []);
 
