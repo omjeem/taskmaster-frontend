@@ -20,8 +20,8 @@ interface TodoInfo {
 }
 export default function UpdateTodo(props: TodoInfo) {
     const [showModal, setShowModal] = useState(props.isShow);
-    const [title, setTitle] = useState("");
-    const [tag, setTag] = useState("");
+    const [title, setTitle] = useState(props.title);
+    const [tag, setTag] = useState(props.tag);
     const [, setTodoList] = useRecoilState(todoListState);
     const [progress, setProgress] = useState("");
 
@@ -52,11 +52,11 @@ export default function UpdateTodo(props: TodoInfo) {
                                     <SubHeading label={"Polish Your Agenda: Perfect Your Schedule!"} />
                                     <InputBox onChange={(e: any) => {
                                         setTitle(e.target.value)
-                                    }} placeholder={props.title} label={"Title"} />
+                                    }} placeholder={props.title} label={"Title"} value={title} />
 
                                     <InputBox onChange={(e: any) => {
                                         setTag(e.target.value)
-                                    }} placeholder={props.tag} label={"Tag"} />
+                                    }} placeholder={props.tag} label={"Tag"} value={tag} />
 
 
                                     <div className="text-sm font-medium text-left py-2">
